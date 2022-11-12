@@ -3,6 +3,19 @@
 const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
 const merkleTree = require("./merkletree.json");
+const CryptoJS = require('crypto-js');
+
+const encryptWithAES = (text) => {
+  const passphrase = '123';
+  return CryptoJS.AES.encrypt(text, passphrase).toString();
+};
+
+const decryptWithAES = (ciphertext) => {
+    const passphrase = '123';
+    const bytes = CryptoJS.AES.decrypt(ciphertext, passphrase);
+    const originalText = bytes.toString(CryptoJS.enc.Utf8);
+    return originalText;
+  };
 
 let leaves = [];
 
@@ -19,12 +32,11 @@ const rootHash = tree.getRoot();
 //Root of the Merkle tree in hex format
 console.log(tree.getHexRoot());
 
-function isWhitelisted(addr) {
-    const allowed_addr = keccak256(addr);
+function isWhitelisted(data) {
+    const leaf = encryptWithAES(data);
+    const allowed_addr = keccak256(leaf);
     const hexProof = tree.getHexProof(allowed_addr);
 
-    //logs the proof needed to provide to the Solidity smart contract!
-    //Stringify the object to pass it as a parameter to the mint function
     console.log(JSON.stringify(hexProof));
 
     return tree.verify(hexProof, allowed_addr, rootHash);
