@@ -15,8 +15,8 @@ devlet sunucunun işleri:
 post yani değişiklik isteği geldiğinde:
 r = random private key üret
 encryptedData = private keye göre encryptle
-ipfsLink = ipfs'e encrypted datayı yükle ve linki kaydet
 hashedDatas = privateKeye göre random number döndürdüğün arraye göre hash arrayini oluştur
 tree = hash arrayinden tree oluştur
-kontratta sadece devletin kaydedebileceği mappingte ( tc'nin hashi => merkleRoot ) kaydını gerçekleştir
+ipfsLink = ipfs'e encrypted datayı ve tree'yi yükle ve linki kaydet
+kontratta sadece devletin kaydedebileceği mappingte ( tc'nin hashi => merkleRoot ) = ipfsLink kaydını gerçekleştir
 kullanıcıya private keyi döndür
