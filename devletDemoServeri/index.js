@@ -8,7 +8,8 @@ const { generateDataNonces } = require("./Cryptography/dataGenerator");
 const { generateMerkleTree } = require("./Cryptography/merkleTreeFunctions.js");
 const {storeJSON} = require('./ipfs_store.js');
 
-const testData = require('./newData.json')
+const testData = require('./newData.json');
+const { changeData } = require("./web3/web3eDevletSunucusu");
 
 const PORT = process.env.PORT || 3000
 app.use(cors());
@@ -26,8 +27,8 @@ async function getDatabase() {
     return output;
 }
 
-async function setContract(tcKimlik, ipfsCid) {
-
+async function setContract(tcKimlik, rootHash, ipfsCid) {
+    await changeData(tcKimlik, rootHash, ipfsCid);
 }
 
 const updateCitizenData = async (tcKimlik, dataArray) => {
@@ -45,8 +46,11 @@ const updateCitizenData = async (tcKimlik, dataArray) => {
     }
     const ipfsCid = await storeJSON( uploadData );
     //ethers'de kontratı imzala ve database'e kaydet
+
+    const rootHash = tree.getHexRoot();
+
     await setDatabase(tcKimlik, dataPrivateKey);
-    await setContract(tcKimlik, ipfsCid);
+    await setContract(tcKimlik, rootHash, ipfsCid);
     return ipfsCid;
 }
 
