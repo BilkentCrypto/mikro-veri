@@ -12,6 +12,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-qr-code": "^2.0.8",
+    "react-qr-scanner": "^1.0.0-alpha.11",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.8",
     "react-typed": "^1.2.0",

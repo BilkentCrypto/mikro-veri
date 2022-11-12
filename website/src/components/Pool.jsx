@@ -10,6 +10,7 @@ import QRCode from 'react-qr-code';
 
 
 
+
 const Pool = () => {
     const handleVerify = () => {
         setShowModal(false);
@@ -25,7 +26,7 @@ const Pool = () => {
     return (
         <section
             id='pools'
-            className=' w-full h-screen  flex items-center bg-primary lg:bg-cover lg:bg-center lg:bg-no-repeat py-32 lg:py-0 overflow-hidden'
+            className=' w-full h-screen flex items-center bg-primary lg:bg-cover lg:bg-center lg:bg-no-repeat py-32 lg:py-0 overflow-hidden'
         >
             <div className='container w-full mx-auto'>
                 <div className='flex  grid md:grid-cols-2  items-center pt-8'>
@@ -34,7 +35,7 @@ const Pool = () => {
 
                             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                    <thead class="text-xl text-gray-700 uppercase bg-white  dark:text-gray-400">
+                                    <thead class="text-xl text-black uppercase bg-white  ">
                                         <tr>
                                     
                                             <th scope="col" class="py-3 px-6">
@@ -65,7 +66,7 @@ const Pool = () => {
                             {showModal ? (
         <>
           <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center backdrop-blur-sm items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               {/*content*/}

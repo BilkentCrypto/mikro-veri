@@ -10,6 +10,7 @@ function App() {
       <Navbar/>
       <Header/>
       <Pool/>
+      <Footer/>
     </div>
   );
 }
