@@ -12,10 +12,15 @@ contract MerkleTree is Ownable {
         string ipfs;
         bytes32 rootHash;
     }
-    bytes32 public merkleRoot = 0x56acbdfe222fc182d2a520ed8dfd463d8768708021037f3412e91a736448089b;
 
     function changeData(bytes32 _hashedMessage, string calldata _ipfs, bytes32 _newHash) public onlyOwner{
         citizenRoots[_hashedMessage] = Veri(_ipfs, _newHash);
     }
-    
+
+    function verifyData(bytes32 id, bytes32 message, bytes32[] calldata _merkleProof) public view returns (bool) {
+        bytes32 leaf = keccak256(abi.encodePacked(message));
+        Veri storage data = citizenRoots[id];
+        return MerkleProof.verify(_merkleProof, data.rootHash, leaf);
+    }
+
 }
