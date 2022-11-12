@@ -1,0 +1,18 @@
+{
+    "name": "merkle-allowlist",
+    "version": "1.0.0",
+    "description": "",
+    "main": "proof.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "fs": "^0.0.1-security",
+      "keccak256": "^1.0.6",
+      "merkletreejs": "^0.2.32",
+      "node-fetch": "^3.2.10"
+    }
+  }
