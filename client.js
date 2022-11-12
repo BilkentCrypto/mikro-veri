@@ -34,12 +34,13 @@ console.log(tree.getHexRoot());
 
 function isWhitelisted(data) {
     const leaf = encryptWithAES(data);
-    const allowed_addr = keccak256(leaf);
-    const hexProof = tree.getHexProof(allowed_addr);
+    console.log(leaf)
+    const allowed = keccak256(leaf);
+    const hexProof = tree.getHexProof(allowed);
 
     console.log(JSON.stringify(hexProof));
 
-    return tree.verify(hexProof, allowed_addr, rootHash);
+    return tree.verify(hexProof, allowed, rootHash);
 }
 
 const result = isWhitelisted("Ankara");
