@@ -74,11 +74,7 @@ async function test() {
     let cid = await updateCitizenData("100", testData)
     console.log("cid", cid)
 }
-
-
-
-
-
+test()
 
 app.listen(PORT)
 
