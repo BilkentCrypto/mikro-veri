@@ -10,4 +10,4 @@ const generateRandomNumber = (seed, count) => {
     }
 }
 
-export {generateRandomNumber};
+module.exports = {generateRandomNumber};
