@@ -23,7 +23,7 @@ function Navbar() {
           <h1 className='text-3xl p-10 font-bold bg-gradient-to-r from-[#0084F4] to-[#48E5FA] bg-clip-text text-transparent'>BilkentDEV</h1>
           <ul className='md:flex hidden uppercase items-center gap-10'>
             <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Ana Sayfa</button></Link>
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verilerim/Verileri Şifrele</button></Link>
+            <Link to="pools" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verilerim/Verileri Şifrele</button></Link>
             <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verileri Doğrula</button></Link>
          </ul>
         
