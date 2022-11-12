@@ -1,17 +1,14 @@
 const CryptoJS = require('crypto-js');
 
-const encryptWithAES = (text) => {
-  const passphrase = '123';
+const encryptWithAES = (text, passphrase) => {
   return CryptoJS.AES.encrypt(text, passphrase).toString();
 };
 
-const decryptWithAES = (ciphertext) => {
-  const passphrase = '123';
+const decryptWithAES = (ciphertext, passphrase) => {
   const bytes = CryptoJS.AES.decrypt(ciphertext, passphrase);
   const originalText = bytes.toString(CryptoJS.enc.Utf8);
   return originalText;
 };
 
-const a = encryptWithAES('Bilkent');
-console.log(a)
-console.log(decryptWithAES(a));
+export {encryptWithAES, decryptWithAES};
+
