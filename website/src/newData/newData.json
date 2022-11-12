@@ -1,55 +1,23 @@
 [
 
     {
-        "id":1,
-        "name":"Akshit",
-        "city":"Moradabad"
-    },
-    
-    {
-        "id":2,
-        "name":"Nikita",
-        "city":"Lucknow"
-    },
-    
-    {
-        "id":3,
-        "name":"Deeksha",
-        "city":"Noida"
-    },
-    
-    {
-        "id":4,
-        "name":"Ritesh",
-        "city":"Delhi"
-    },
-    
-    {
-        "id":5,
-        "name":"Somya",
-        "city":"Gurugram"
-    },
-    
-    {
-        "id":6,
-        "name":"Eshika",
-        "city":"Mumbai"
+        "veriTuru":"İsim",
+        "veriIcerigi":"Kaan",
+        "nonce": 819325712986
     },
     {
-        "id":7,
-        "name":"Kalpana",
-        "city":"Rampur"
+        "veriTuru":"Soyisim",
+        "veriIcerigi":"Aydeniz",
+        "nonce": 1621313166
     },
-    
     {
-        "id":8,
-        "name":"Parul",
-        "city":"Chandigarh"
+        "veriTuru":"İl",
+        "veriIcerigi":"Ankara",
+        "nonce": 47277237
     },
-    
     {
-        "id":9,
-        "name":"Himani",
-        "city":"Dehradun"
+        "veriTuru":"İlçe",
+        "veriIcerigi":"Çankaya",
+        "nonce": 236236
     }
 ]
