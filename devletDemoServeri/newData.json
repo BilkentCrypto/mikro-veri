@@ -1,0 +1,23 @@
+[
+
+    {
+        "veriTuru":"İsim",
+        "veriIcerigi":"Kaan",
+        "nonce": 819325712986
+    },
+    {
+        "veriTuru":"Soyisim",
+        "veriIcerigi":"Aydeniz",
+        "nonce": 1621313166
+    },
+    {
+        "veriTuru":"İl",
+        "veriIcerigi":"Ankara",
+        "nonce": 47277237
+    },
+    {
+        "veriTuru":"İlçe",
+        "veriIcerigi":"Çankaya",
+        "nonce": 236236
+    }
+]

@@ -1,6 +1,6 @@
 const seedrandom = require('seedrandom');
 
-const generateRandomNumber = (seed, count) => {
+const generateRandomNumbers = (seed, count) => {
     let array = [];
 
     for (let i = 0; i < count; i++) {
@@ -8,6 +8,8 @@ const generateRandomNumber = (seed, count) => {
         const randomNumber = generator();
         array.push(randomNumber);
     }
+
+    return array;
 }
 
-module.exports = {generateRandomNumber};
+module.exports = {generateRandomNumbers};

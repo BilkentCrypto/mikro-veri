@@ -1,4 +1,3 @@
-
 require('dotenv').config()
 const {Web3Storage, File} = require('web3.storage')
  

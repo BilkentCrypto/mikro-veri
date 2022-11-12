@@ -1,9 +1,25 @@
+const {generateRandomNumbers} = require('./random.js')
+const keccak256 = require("keccak256");
 
+const generateDataNonces = (dataArray, dataPrivateKey) => {
 
-export const generateData = (veriTuru, veriIcerigi, veriNonceu) => {
+    const nonces = generateRandomNumbers(dataPrivateKey, dataArray.length );
+    const noncedArray = dataArray.map( (data, index) => {
+        return {
+            veriTuru: data.veriTuru,
+            veriIcerigi: data.veriIcerigi,
+            nonce: nonces[index]
+        }
+    } )
+
+    const hashedArray = noncedArray.map((data) => {
+        return keccak256( JSON.stringify(data) );
+    })
+
     return {
-        veriTuru: veriTuru,
-        veriIcerigi: veriIcerigi,
-        veriNonceu: veriNonceu,
+        noncedArray: noncedArray,
+        hashedArray: hashedArray
     }
 }
+
+module.exports = {generateDataNonces}

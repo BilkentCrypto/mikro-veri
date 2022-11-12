@@ -19,4 +19,5 @@ hashedDatas = privateKeye göre random number döndürdüğün arraye göre hash
 tree = hash arrayinden tree oluştur
 ipfsLink = ipfs'e encrypted datayı ve tree'yi yükle ve linki kaydet
 kontratta sadece devletin kaydedebileceği mappingte ( tc'nin hashi => merkleRoot ) = ipfsLink kaydını gerçekleştir
-kullanıcıya private keyi döndür
+
+kullanıcıya private keyi döndür getle kimlik ve şifreyi sağlarsa databaseden

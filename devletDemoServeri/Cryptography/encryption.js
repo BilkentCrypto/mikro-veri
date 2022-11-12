@@ -10,5 +10,5 @@ const decryptWithAES = (ciphertext, passphrase) => {
   return originalText;
 };
 
-export {encryptWithAES, decryptWithAES};
+module.exports = {encryptWithAES, decryptWithAES};
 
