@@ -12,7 +12,7 @@ import {hashData} from '../Cryptography/dataGenerator.js';
 
 
 
-const Pool = () => {
+const Proof = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedTicks, setSelectedTicks] = useState([]);
@@ -188,5 +188,5 @@ const Pool = () => {
   )
 }
 
-export default Pool
+export default Proof
 

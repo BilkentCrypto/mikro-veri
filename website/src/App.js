@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Pool from "./components/Pool";
-import Footer from "./components/Footer";
+import Proof from "./components/Proof";
+import Footer from "./components/Verify";
 import Government from "./components/Government";
 import NavbarGovernment from "./components/NavbarGovernment";
 
@@ -21,7 +21,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/devlet" element={<><NavbarGovernment/><Government/></>} />
-          <Route exact path="" element={<><Navbar/><Header/><Pool/><Footer/></>}/>
+          <Route exact path="" element={<><Navbar/><Header/><Proof/><Footer/></>}/>
         </Routes>
         <ul>
             <li><Link to="/devlet">Home</Link></li>
