@@ -33,11 +33,18 @@ async function setContract(tcKimlik, rootHash, ipfsCid) {
 }
 
 const updateCitizenData = async (tcKimlik, dataArray) => {
-    const dataPrivateKey = crypto.randomUUID(); 
-    console.log("dataPrivateKey", dataPrivateKey)
+    //const dataPrivateKey = crypto.randomUUID(); 
+    //console.log("dataPrivateKey", dataPrivateKey)
 
-    const {noncedArray, hashedArray} = generateDataNonces(dataArray, dataPrivateKey);
-    const encryptedData = encryptWithAES( JSON.stringify(noncedArray), dataPrivateKey );
+    const dataPrivateKey = dataArray.dataPrivateKey
+
+    const {noncedArray, hashedArray} = generateDataNonces(dataArray.veriler, dataPrivateKey);
+    const outputData = {
+        kimlikNo: tcKimlik,
+        veriler: noncedArray,
+    }
+    console.log("şifrelenecek json dosyaı", outputData);
+    const encryptedData = encryptWithAES( JSON.stringify(outputData), dataPrivateKey );
     
     const tree = generateMerkleTree(hashedArray);
 
@@ -51,7 +58,8 @@ const updateCitizenData = async (tcKimlik, dataArray) => {
     const rootHash = tree.getHexRoot();
 
     await setDatabase(tcKimlik, dataPrivateKey);
-    await setContract(tcKimlik, rootHash, ipfsCid);
+    const hashedKimlikNo = keccak256(tcKimlik)
+    await setContract(hashedKimlikNo, rootHash, ipfsCid);
     return ipfsCid;
 }
 
@@ -72,7 +80,7 @@ app.post("/update-citizen-data", async (req, res) => {
 })
 
 async function test() {
-    let cid = await updateCitizenData(keccak256("100"), testData)
+    let cid = await updateCitizenData("11111111110", testData)
     console.log("cid", cid)
 }
 test()

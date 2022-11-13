@@ -1,23 +1,22 @@
-[
+{
+"dataPrivateKey": "edbe9cc3-18f7-4b64-baaa-fcd67726db34",
+"veriler" : [
 
     {
-        "veriTuru":"İsim",
-        "veriIcerigi":"Kaan",
-        "nonce": 819325712986
+        "veriTuru":"Isim",
+        "veriIcerigi":"Kaan"
     },
     {
         "veriTuru":"Soyisim",
-        "veriIcerigi":"Aydeniz",
-        "nonce": 1621313166
+        "veriIcerigi":"Aydeniz"
     },
     {
-        "veriTuru":"İl",
-        "veriIcerigi":"Ankara",
-        "nonce": 47277237
+        "veriTuru":"Il",
+        "veriIcerigi":"Ankara"
     },
     {
-        "veriTuru":"İlçe",
-        "veriIcerigi":"Çankaya",
-        "nonce": 236236
+        "veriTuru":"Ilce",
+        "veriIcerigi":"Cankaya"
     }
 ]
+}

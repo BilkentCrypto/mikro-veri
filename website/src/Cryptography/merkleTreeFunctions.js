@@ -10,8 +10,10 @@ const generateMerkleTree = (dataArray) => {
 const verifyMerkleTree = (tree, dataToVerify) => {
     const leaf = dataToVerify;
     const allowed_addr = keccak256(leaf);
+
     const hexProof = tree.getHexProof(allowed_addr);
     const rootHash = tree.getRoot();
+
     return tree.verify(hexProof, allowed_addr, rootHash);
 }
 

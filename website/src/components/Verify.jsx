@@ -9,7 +9,9 @@ import QRCode from 'react-qr-code';
 import QrReader from 'react-qr-scanner';
 import { verifyMerkleTree } from '../Cryptography/merkleTreeFunctions';
 import { hashData } from '../Cryptography/dataGenerator';
-
+import retrieveFiles from '../scripts/ipfs_read';
+import MerkleTree from 'merkletreejs';
+import keccak256 from 'keccak256';
 
 
 
@@ -22,20 +24,30 @@ const Footer = () => {
   const [verifyData, setVerifyData] = useState();
 console.log("verify data", verifyData)
   //merkleTree lazım
-  const merkleTree = {}
+  
 
     const handleClose = () => {
         setShowModal(false);
     }
 
 
-    const handleScan = (data) => {
+    const handleScan = async (data) => {
       if(data) {
         console.log("data json")
         setShowModal(false);
         const dataJSON = JSON.parse(data.text)
+        const kimlikNo = dataJSON.kimlikNo;
+        const ipfsData = await retrieveFiles(kimlikNo)
+        console.log("ipfsdata",ipfsData)
         console.log("dataJson",dataJSON)
-        const dataArray = []
+        let merkleTreeData = ipfsData.merkleTree
+        let leaves = [];
+        for (let leaf in merkleTreeData.leaves) {
+            leaves.push(Buffer.from(merkleTreeData.leaves[leaf].data));
+        }
+        const merkleTree = new MerkleTree(leaves, keccak256, { sortPairs: true });
+
+        const dataArray = dataJSON.veriler;
         const hashedArray = dataArray.map( (value) => {
           return hashData(value)
         } )
@@ -60,7 +72,7 @@ console.log("verify data", verifyData)
     }
 
 
-    const listElements = data.map( (element) => {
+    const listElements = data.veriler.map( (element) => {
         return(<ListElement veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru}/>);
     } )
     

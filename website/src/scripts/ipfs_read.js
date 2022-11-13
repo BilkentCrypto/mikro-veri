@@ -1,25 +1,19 @@
-import { Web3Storage, getFilesFromPath } from 'web3.storage'
+import config from "./config.json"
+import abi from "./abi.json"
+import keccak256 from "keccak256";
+import {ethers} from "ethers";
 
-async function retrieveFiles () {
+async function retrieveFiles (tcKimlik) {
 
-  const token = process.env.API_TOKEN
-  const client = new Web3Storage({ token })
+    let provider = new ethers.providers.JsonRpcProvider(config.rpcUrl);
+    let contract = new ethers.Contract(config.contractAddress, abi, provider);
+    let ipfsCid = await contract.citizenRoots(keccak256(tcKimlik));
 
-  const cid =
-     'bafybeibt3f4fuzpkyx27fkwds3ernatihvahmanc4rg44schcghdav5qui'
-
-  const res = await client.get(cid)
-  const files = await res.files()
-
-  for (const file of files) {
-    console.log(`${file.cid}: ${file.name} (${file.size} bytes)`)
-  }
-
-  let reader = new FileReader();
-  reader.readAsText(files[0]);
-  reader.onload = function() {
-    console.log(reader.result);
-  };
+    const url = "https://w3s.link/ipfs/" + ipfsCid.ipfs + "/veri.json"
+    let veri = await fetch(url)
+    let jsonVeri = await veri.json();
+    return jsonVeri;
 }
+
 
 export default retrieveFiles;

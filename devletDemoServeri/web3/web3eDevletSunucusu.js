@@ -12,5 +12,7 @@ async function changeData(id, rootHash, ipfsURL) {
     await contract.changeData(id, ipfsURL, rootHash);
 }
 
+
+
 module.exports = {changeData}
 

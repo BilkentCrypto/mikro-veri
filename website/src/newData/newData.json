@@ -1,23 +1,26 @@
-[
-
-    {
-        "veriTuru":"İsim",
-        "veriIcerigi":"Kaan",
-        "nonce": 819325712986
-    },
-    {
-        "veriTuru":"Soyisim",
-        "veriIcerigi":"Aydeniz",
-        "nonce": 1621313166
-    },
-    {
-        "veriTuru":"İl",
-        "veriIcerigi":"Ankara",
-        "nonce": 47277237
-    },
-    {
-        "veriTuru":"İlçe",
-        "veriIcerigi":"Çankaya",
-        "nonce": 236236
-    }
-]
+{
+    "kimlikNo": "11111111110",
+    "veriler": 
+        [
+            {
+                "veriTuru": "Isim",
+                "veriIcerigi": "Kaan",
+                "nonce": 297592600
+            },
+            {
+                "veriTuru": "Soyisim",
+                "veriIcerigi": "Aydeniz",
+                "nonce": 276562721
+            },
+            {
+                "veriTuru": "Il",
+                "veriIcerigi": "Ankara",
+                "nonce": 949408474
+            },
+            {
+                "veriTuru": "Ilce",
+                "veriIcerigi": "Cankaya",
+                "nonce": 527504358
+            }
+        ]
+}

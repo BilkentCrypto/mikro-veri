@@ -39,7 +39,12 @@ const Proof = () => {
         
       }
     } );
-    setQrData(proofData)
+    const outputData = {
+      kimlikNo: data.kimlikNo,
+      veriler: data.veriler,
+    }
+
+    setQrData(outputData)
   }
 
 
@@ -66,7 +71,7 @@ const Proof = () => {
 
   console.log("data array", dataArray)
 
-  const listElements = data.map((element, index) => {
+  const listElements = data.veriler.map((element, index) => {
     return (<ListElement handleClick={() => handleTick(index)} veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru} />);
   })
 

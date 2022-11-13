@@ -5,7 +5,8 @@ const generateRandomNumbers = (seed, count) => {
 
     for (let i = 0; i < count; i++) {
         const generator = seedrandom(seed + i);
-        const randomNumber = generator();
+        let randomNumber = generator() * 1000000000;
+        randomNumber = Math.floor(randomNumber)
         array.push(randomNumber);
     }
 
