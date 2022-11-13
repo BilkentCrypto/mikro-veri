@@ -7,6 +7,9 @@ import {useState} from 'react'
 import { FaBullseye } from 'react-icons/fa';
 import QRCode from 'react-qr-code';
 import QrReader from 'react-qr-scanner';
+import { verifyMerkleTree } from '../Cryptography/merkleTreeFunctions';
+import { hashData } from '../Cryptography/dataGenerator';
+
 
 
 
@@ -15,14 +18,38 @@ import QrReader from 'react-qr-scanner';
 const Footer = () => {
 
   const [showModal, setShowModal] = useState(false);
-  const [result, setResult] = useState("No result");
+  const [qrData, setQrData] = useState();
+  const [verifyData, setVerifyData] = useState();
+console.log("verify data", verifyData)
+  //merkleTree lazım
+  const merkleTree = {}
 
-
-    const handleVerify = () => {
+    const handleClose = () => {
         setShowModal(false);
     }
+
+
     const handleScan = (data) => {
-      setResult(data);
+      if(data) {
+        console.log("data json")
+        setShowModal(false);
+        const dataJSON = JSON.parse(data.text)
+        console.log("dataJson",dataJSON)
+        const dataArray = []
+        const hashedArray = dataArray.map( (value) => {
+          return hashData(value)
+        } )
+        const merkleProofs = hashedArray.map( (value, index) => {
+          return{
+            ...dataArray[index],
+            isMerkleProofTrue: verifyMerkleTree(merkleTree, value),
+          }
+        } );
+
+        setVerifyData(merkleProofs)
+
+      }
+
     }
 
 
@@ -86,14 +113,14 @@ const Footer = () => {
                          style={previewStyle}
                          onScan={handleScan}
                          />
-                         <p>{result}</p>               
+                         <p></p>               
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-center p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
                     className="text-red-500 border hover:text-white hover:bg-red-500 background-transparent border-red-500 hover:border-transparent rounded font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={handleVerify}
+                    onClick={handleClose}
                     
                     
                   >

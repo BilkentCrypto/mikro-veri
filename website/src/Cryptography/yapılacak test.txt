@@ -1,0 +1,22 @@
+private keyle data.json'dan hashedData üret
+
+data.json
+
+bir private key var
+
+data.json'u o private keyle encryptle encryptedData olarak kaydet
+
+
+sonra merkle tree'yi üret
+
+
+
+devlet sunucunun işleri:
+post yani değişiklik isteği geldiğinde:
+r = random private key üret
+encryptedData = private keye göre encryptle
+hashedDatas = privateKeye göre random number döndürdüğün arraye göre hash arrayini oluştur
+tree = hash arrayinden tree oluştur
+ipfsLink = ipfs'e encrypted datayı ve tree'yi yükle ve linki kaydet
+kontratta sadece devletin kaydedebileceği mappingte ( tc'nin hashi => merkleRoot ) = ipfsLink kaydını gerçekleştir
+kullanıcıya private keyi döndür

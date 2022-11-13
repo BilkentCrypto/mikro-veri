@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Pool from "./components/Pool";
 import Footer from "./components/Footer";
 
+window.Buffer = window.Buffer || require("buffer").Buffer;
+
 function App() {
   return (
     <div>
