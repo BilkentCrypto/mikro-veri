@@ -6,7 +6,7 @@ async function retrieveFiles () {
   const client = new Web3Storage({ token })
 
   const cid =
-     'bafybeibt3f4fuzpkyx27fkwds3ernatihvahmanc4rg44schcghdav5qui'
+    'bafybeibt3f4fuzpkyx27fkwds3ernatihvahmanc4rg44schcghdav5qui'
 
   const res = await client.get(cid)
   const files = await res.files()
