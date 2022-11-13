@@ -3,20 +3,19 @@ import Typed from 'react-typed'
 import PswImg from '../assets/password.png';
 import data from '../newData/newData.json'
 import ListElementGovernment from './ListElementsGovernment';
+import {useWeb3React} from '@web3-react/core';
+import { Web3ReactProvider } from '@web3-react/core';
+//import { injected } from '../connector/injected';
+import {ethers} from "ethers"
 import {useState} from 'react'
 import { FaBullseye } from 'react-icons/fa';
 import QRCode from 'react-qr-code';
 
-
-
-
-
-
 const Government = () => {
     const handleVerify = () => {
         setShowModal(false);
-
     }
+
     const [showModal, setShowModal] = React.useState(false);
 
 
@@ -24,7 +23,10 @@ const Government = () => {
         return(<ListElementGovernment veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru}/>);
     } )
 
+
     return (
+        
+   
         <section
             id='pools'
             className=' w-full h-screen flex items-center bg-primary lg:bg-cover lg:bg-center lg:bg-no-repeat py-32 lg:py-0 overflow-hidden'
