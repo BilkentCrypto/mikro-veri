@@ -6,7 +6,7 @@ import ListElement from './ListElement';
 import { useState } from 'react'
 import { FaBullseye } from 'react-icons/fa';
 import QRCode from 'react-qr-code';
-import QrReader from 'react-qr-scanner';
+import {QrReader} from 'react-qr-reader';
 import { verifyMerkleTree } from '../Cryptography/merkleTreeFunctions';
 import { hashData } from '../Cryptography/dataGenerator';
 import retrieveFiles from '../scripts/ipfs_read';
@@ -149,9 +149,11 @@ const Footer = () => {
                       {/*body*/}
                       <div className="relative p-6 flex-auto">
                         <QrReader
-                          delay={100}
-                          style={previewStyle}
-                          onScan={handleScan}
+                          scanDelay={100}
+                          videoContainerStyle={previewStyle}
+                          onResult={handleScan}
+                          key="environment"
+                          constraints={{ facingMode: 'environment' }}
                         />
                         <p></p>
                       </div>

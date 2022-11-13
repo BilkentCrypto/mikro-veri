@@ -19,7 +19,7 @@ const Government = () => {
     const [showModal, setShowModal] = React.useState(false);
 
 
-    const ListElementsGovernment = data.map( (element) => {
+    const ListElementsGovernment = data.veriler.map( (element) => {
         return(<ListElementGovernment veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru}/>);
     } )
 

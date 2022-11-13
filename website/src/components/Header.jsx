@@ -33,7 +33,7 @@ const Header = () => {
                   loop
                 />
            <h1 className='text-4xl leading-[44px] md:text-4xl text-white md:leading-tight lg:text-7xl lg:leading-[1.2] font-bold md:tracking-[-2px]'>
-            bir şekilde kanıtlayabilirsiniz. <br />
+              bir şekilde kanıtlayabilirsiniz. <br />
           </h1>      
           <p className='pt-4 pb-8 md:pt-6 text-gray-400 md:pb-12 max-w-[480px] text-lg text-center lg:text-left'>
               Verilerinizin doğrulunu kanıtlamak için kişisel bilgierinizi paylaşmanıza gerek yok. X sayesinde verilerinizi üçüncü parti kuruluşlara paylaşmadan kanıtlayabilrsiniz.

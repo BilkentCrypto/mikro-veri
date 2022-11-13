@@ -110,3 +110,6 @@ dist
 website/node_modules/.bin/css-prefers-color-scheme
 website/node_modules/.bin/css-prefers-color-scheme
 node_modules
+
+# Local Netlify folder
+.netlify

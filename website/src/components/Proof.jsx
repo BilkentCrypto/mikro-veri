@@ -78,7 +78,7 @@ console.log("outputData",outputData)
 
   return (
     <section
-      id='pools'
+      id='proof'
       className=' w-full h-screen flex items-center bg-primary lg:bg-cover lg:bg-center lg:bg-no-repeat py-32 lg:py-0 overflow-hidden'
     >
       <div className='container w-full mx-auto'>
