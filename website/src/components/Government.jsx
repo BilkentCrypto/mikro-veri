@@ -2,7 +2,7 @@ import React from 'react'
 import Typed from 'react-typed'
 import PswImg from '../assets/password.png';
 import data from '../newData/newData.json'
-import ListElement from './ListElement';
+import ListElementGovernment from './ListElementsGovernment';
 import {useState} from 'react'
 import { FaBullseye } from 'react-icons/fa';
 import QRCode from 'react-qr-code';
@@ -20,8 +20,8 @@ const Government = () => {
     const [showModal, setShowModal] = React.useState(false);
 
 
-    const listElements = data.map( (element) => {
-        return(<ListElement veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru}/>);
+    const ListElementsGovernment = data.map( (element) => {
+        return(<ListElementGovernment veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru}/>);
     } )
 
     return (
@@ -49,7 +49,7 @@ const Government = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {listElements}
+                                        {ListElementsGovernment}
 
                                     
                                     </tbody>
@@ -65,7 +65,7 @@ const Government = () => {
 
                         </p>
                         <h1 className='text-4xl leading-[44px] md:text-4xl text-white md:leading-tight text-lg text-center lg:text-left lg:text-6xl lg:leading-[1.2] font-bold md:tracking-[-2px]'>
-                            Verisi değişmiş bir vatandaş hakkındaki bilgileri değiştirebilirsiniz. <br />
+                            Vatandaş hakkındaki bilgileri değiştirebilirsiniz. <br />
                         </h1>
 
                         <p className='pt-4 pb-8 md:pt-6 text-gray-400 md:pb-12 max-w-[480px] text-lg text-center lg:text-left'>

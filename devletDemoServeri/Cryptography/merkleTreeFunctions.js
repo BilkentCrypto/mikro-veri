@@ -2,7 +2,7 @@ const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
 
 const generateMerkleTree = (dataArray) => {
-    data = dataArray.map( value => keccak256(value) );
+    const data = dataArray.map( value => keccak256(value) );
     const merkleTree = new MerkleTree(data, keccak256, { sortPairs: true });
     return merkleTree;
 }

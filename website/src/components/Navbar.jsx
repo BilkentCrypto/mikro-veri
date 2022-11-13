@@ -34,7 +34,7 @@ function Navbar() {
             
              <button className=' border-none text-flex font-bold w-[220px] h-[40px] rounded-full hover:scale-105 duration-300 bg-gradient-to-r from-[#0084F4] to-[#F50FDE] text-white full-width mx-auto '>
           
-               Cüzdana bağlan
+               Giriş yap
             </button>
            
         </div>
@@ -43,16 +43,17 @@ function Navbar() {
           {!nav ? <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/>}
 
        </div>
-        <div className={!nav ? 'fixed left-0 top-3 w-[50%] h-full border-r border-r-gray-900 bg-[#000300] ease-linear duration-500' : 'fixed left-[-100%] '}>
+        <div className={!nav ? 'fixed left-0 top-3 w-[50%] h-full border-r border-r-gray-900 bg-[#0C0D32] ease-linear duration-500' : 'fixed left-[-100%] '}>
           <h1 className='w-full text-2xl font-bold text-[#ffffff] m-5'>BilkentDEV</h1>  
           <ul className='uppercase p-4'> 
-           <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='p-5 font-semibold'><li className='p-4 border-b border-b-gray-400'><button className='hover:underline'>Home</button></li> </Link>
-           <Link to="pools" spy={true} smooth={true} offset={50} duration={500} className='p-5 font-semibold'> <li className='p-4 border-b border-b-gray-400'><button className='hover:underline'>Pools</button></li></Link>
+          <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Ana Sayfa</button></Link>
+            <Link to="pools" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verilerim/Verileri Şifrele</button></Link>
+            <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verileri Doğrula</button></Link>
               <div className='md:flex mt-2 item-center'>
                 
                  <button className='border-none text-flex font-bold w-[200px] h-[40px] rounded-full hover:scale-105 duration-300    bg-white to-pink-500 text-[#000000] full-width     mx-auto '>
           
-                   Connect to a wallet
+                   Giriş Yap
                 </button>
               </div>       
            </ul> 

@@ -9,7 +9,7 @@ async function changeData(id, rootHash, ipfsURL) {
     let provider = new ethers.providers.JsonRpcProvider(config.rpcUrl);
     const wallet = new ethers.Wallet( process.env.ETH_PRIVATE_KEY, provider )
     let contract = new ethers.Contract(config.contractAddress, abi, wallet);
-    await contract.changeData(id, rootHash, ipfsURL);
+    await contract.changeData(id, ipfsURL, rootHash);
 }
 
 module.exports = {changeData}

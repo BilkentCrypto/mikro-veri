@@ -10,6 +10,7 @@ const {storeJSON} = require('./ipfs_store.js');
 
 const testData = require('./newData.json');
 const { changeData } = require("./web3/web3eDevletSunucusu");
+const keccak256 = require("keccak256");
 
 const PORT = process.env.PORT || 3000
 app.use(cors());
@@ -71,7 +72,7 @@ app.post("/update-citizen-data", async (req, res) => {
 })
 
 async function test() {
-    let cid = await updateCitizenData("100", testData)
+    let cid = await updateCitizenData(keccak256("100"), testData)
     console.log("cid", cid)
 }
 test()
