@@ -31,7 +31,7 @@ const [showModal, setShowModal] = React.useState(false);
           <ul className='md:flex hidden uppercase items-center gap-10'>
             <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Ana Sayfa</button></Link>
             <Link to="pools" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verilerim/Verileri Şifrele</button></Link>
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verileri Doğrula</button></Link>
+            <Link to="verify" spy={true} smooth={true} offset={50} duration={500} className='py-7 px-1 inline-block font-bold text-white'><button className='hover:underline'>Verileri Doğrula</button></Link>
          </ul>
         
     
@@ -84,7 +84,7 @@ const [showModal, setShowModal] = React.useState(false);
                     
                     
                   >
-                    Kayıt Ol
+                    Giriş Yap
                   </button>
                   <button
                     className="text-red-500 border hover:text-white hover:bg-red-500 background-transparent border-red-500 hover:border-transparent rounded font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
