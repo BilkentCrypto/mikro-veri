@@ -12,6 +12,7 @@ import { hashData } from '../Cryptography/dataGenerator';
 import retrieveFiles from '../scripts/ipfs_read';
 import MerkleTree from 'merkletreejs';
 import keccak256 from 'keccak256';
+import VerifyElement from './VerifyElement';
 
 
 
@@ -21,7 +22,7 @@ const Footer = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [qrData, setQrData] = useState();
-  const [verifyData, setVerifyData] = useState();
+  const [verifyData, setVerifyData] = useState([]);
 console.log("verify data", verifyData)
   //merkleTree lazım
   
@@ -72,9 +73,10 @@ console.log("verify data", verifyData)
     }
 
 
-    const listElements = data.veriler.map( (element) => {
-        return(<ListElement veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru}/>);
-    } )
+    const verifyElements = verifyData.map((element, index) => {
+      return (<VerifyElement veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} dogruMu={element.isMerkleProofTrue}  key={element.veriTuru} />);
+    })
+  
     
 
     return (
@@ -96,6 +98,30 @@ console.log("verify data", verifyData)
                             Alt tarafta bulunan butonuna tıklayıp QR kodu okutarak verileri doğrulayabilirsiniz.
                         </p>
                         <button onClick={() => setShowModal(true)} className=' inline-block w-full py-4 my-4 bg-blue-700 hover:bg-blue-600 text-white font-bold rounded-xl'>Verileri Kamera İle Doğrula</button>
+                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                  <thead className="text-xl text-black uppercase bg-white  ">
+                    <tr>
+
+                      <th scope="col" className="py-3 px-6">
+                        Verİ Türü
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        Verİ İÇERİĞİ
+                      </th>
+                      <th scope="col" className="py-3 px-2">
+
+                       
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {verifyElements}
+
+
+                  </tbody>
+                </table>
+                        
+                        
                         {showModal ? (
         <>
           <div

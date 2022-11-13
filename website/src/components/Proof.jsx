@@ -25,7 +25,12 @@ const Proof = () => {
   }
 
   
+  const dataArray = selectedTicks.map((value) => {
+    return data.veriler[value];
+  })
 
+
+  console.log("data array", dataArray)
   const handleVerify = () => {
     setShowModal(true);
     const hashedArray = dataArray.map( (value) => {
@@ -41,9 +46,9 @@ const Proof = () => {
     } );
     const outputData = {
       kimlikNo: data.kimlikNo,
-      veriler: data.veriler,
+      veriler: proofData,
     }
-
+console.log("outputData",outputData)
     setQrData(outputData)
   }
 
@@ -65,11 +70,7 @@ const Proof = () => {
 
   console.log("selectedTicks", selectedTicks)
 
-  const dataArray = selectedTicks.map((value) => {
-    return data[value];
-  })
 
-  console.log("data array", dataArray)
 
   const listElements = data.veriler.map((element, index) => {
     return (<ListElement handleClick={() => handleTick(index)} veriTuru={element.veriTuru} veriIcerigi={element.veriIcerigi} key={element.veriTuru} />);
