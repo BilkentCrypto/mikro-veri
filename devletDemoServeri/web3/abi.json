@@ -107,7 +107,7 @@
 			},
 			{
 				"internalType": "bytes32",
-				"name": "message",
+				"name": "_hashedMessage",
 				"type": "bytes32"
 			},
 			{

@@ -17,10 +17,8 @@ contract MerkleTree is Ownable {
         citizenRoots[_hashedMessage] = Veri(_ipfs, _newHash);
     }
 
-    function verifyData(bytes32 id, bytes32 message, bytes32[] calldata _merkleProof) public view returns (bool) {
-        bytes32 leaf = keccak256(abi.encodePacked(message));
+    function verifyData(bytes32 id, bytes32 _hashedMessage, bytes32[] calldata _merkleProof) public view returns (bool) {
         Veri storage data = citizenRoots[id];
-        return MerkleProof.verify(_merkleProof, data.rootHash, leaf);
+        return MerkleProof.verify(_merkleProof, data.rootHash, _hashedMessage);
     }
-
 }
