@@ -1,9 +1,8 @@
-# dagitik-veri-yonetimi-digiathon
-MikroVeri
-
 https://bilkent-dev.netlify.app/
 
-```
-1. npm install
-2. npm start
-```
+# Get the Project Up
+'''
+1. cd website
+2. yarn install
+3. yarn start
+'''
