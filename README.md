@@ -8,6 +8,6 @@ After cloning the repo
 3. yarn start
 ```
 
-# What is the Mikro Veri
+# What is Mikro Veri
 
 twitter flood: https://twitter.com/kmetehanclskn/status/1592245730051502081?s=20&t=f_t5tnmyaAPN8-PZtZFR1Q.
